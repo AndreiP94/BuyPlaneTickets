@@ -1,0 +1,42 @@
+﻿@page
+@model ProjectBileteAvion.Pages.Zboruri.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalii zboruri</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Zbor.DataOraPlecare)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Zbor.DataOraPlecare)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Zbor.DataOraSosire)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Zbor.DataOraSosire)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Zbor.Status)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Zbor.Status)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Zbor.Destinatie)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Zbor.DestinatieID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Zbor.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

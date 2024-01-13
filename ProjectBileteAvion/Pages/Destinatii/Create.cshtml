@@ -1,0 +1,43 @@
+﻿@page
+@model ProjectBileteAvion.Pages.Destinatii.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Creare Destinatii</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Destinatie.Nume" class="control-label"></label>
+                <input asp-for="Destinatie.Nume" class="form-control" />
+                <span asp-validation-for="Destinatie.Nume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Destinatie.Tara" class="control-label"></label>
+                <input asp-for="Destinatie.Tara" class="form-control" />
+                <span asp-validation-for="Destinatie.Tara" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Destinatie.Aeroport" class="control-label"></label>
+                <input asp-for="Destinatie.Aeroport" class="form-control" />
+                <span asp-validation-for="Destinatie.Aeroport" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn button-stilizat" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

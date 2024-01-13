@@ -1,0 +1,49 @@
+﻿@page
+@model ProjectBileteAvion.Pages.Bilete.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit Bilete</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Bilet.ID" />
+            <div class="form-group">
+                <label asp-for="Bilet.ZborID" class="control-label"></label>
+                <select asp-for="Bilet.ZborID" class="form-control" asp-items="ViewBag.ZborID"></select>
+                <span asp-validation-for="Bilet.ZborID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bilet.PasagerID" class="control-label"></label>
+                <select asp-for="Bilet.PasagerID" class="form-control" asp-items="ViewBag.PasagerID"></select>
+                <span asp-validation-for="Bilet.PasagerID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bilet.Clasa" class="control-label"></label>
+                <input asp-for="Bilet.Clasa" class="form-control" />
+                <span asp-validation-for="Bilet.Clasa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bilet.Pret" class="control-label"></label>
+                <input asp-for="Bilet.Pret" class="form-control" />
+                <span asp-validation-for="Bilet.Pret" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn button-stilizat" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,45 @@
+﻿@page
+@model ProjectBileteAvion.Pages.Zboruri.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Stergere zboruri</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Zbor.DataOraPlecare)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Zbor.DataOraPlecare)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Zbor.DataOraSosire)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Zbor.DataOraSosire)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Zbor.Status)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Zbor.Status)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Zbor.Destinatie)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Zbor.Destinatie.ID)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Zbor.ID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

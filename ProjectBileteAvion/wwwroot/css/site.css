@@ -1,0 +1,77 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+.navbar-custom, .footer-custom {
+    background-color:white ; 
+}
+
+.navbar-custom-copy, .footer-custom-copy {
+    background-color: lightblue;
+}
+
+.footer-custom, .footer-custom-copy {
+    text-align: center;
+}
+
+.background-image {
+    background: url('/images/plane3.jpeg') no-repeat center center;
+    background-size: cover;
+    height: 100vh; 
+    height:80vh;
+    margin-left:-100px;
+    margin-right:-100px;
+    margin-top:-10px;
+}
+
+.welcome-message {
+    font-size: 3rem; 
+    color: #ffffff; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    font-weight: bold; 
+    margin-top:-130px;
+}
+
+.button-stilizat {
+    background-color: lightblue; 
+    color: white; 
+    border: none; 
+    margin-top:5px;
+    padding: 4px 10px;
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-weight: bold; 
+}
+
+    .button-stilizat:hover {
+        background-color: #1565c0; 
+    }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

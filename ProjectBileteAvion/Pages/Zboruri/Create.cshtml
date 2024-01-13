@@ -1,0 +1,47 @@
+﻿@page
+@model ProjectBileteAvion.Pages.Zboruri.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Creare zboruri</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Zbor.DestinatieID" class="control-label"> Aeroport</label>
+                <select asp-for="Zbor.DestinatieID" class ="form-control" asp-items="ViewBag.DestinatieID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Zbor.DataOraPlecare" class="control-label"></label>
+                <input asp-for="Zbor.DataOraPlecare" class="form-control" />
+                <span asp-validation-for="Zbor.DataOraPlecare" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Zbor.DataOraSosire" class="control-label"></label>
+                <input asp-for="Zbor.DataOraSosire" class="form-control" />
+                <span asp-validation-for="Zbor.DataOraSosire" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Zbor.Status" class="control-label"></label>
+                <input asp-for="Zbor.Status" class="form-control" />
+                <span asp-validation-for="Zbor.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn button-stilizat" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

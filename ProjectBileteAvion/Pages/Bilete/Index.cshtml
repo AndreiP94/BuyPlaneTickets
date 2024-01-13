@@ -1,0 +1,60 @@
+﻿@page
+@model ProjectBileteAvion.Pages.Bilete.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Bilete</h1>
+
+<p>
+    <a class="button-stilizat" asp-page="Create">Creeaza bilet nou</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Bilet[0].ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bilet[0].Clasa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bilet[0].Pret)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bilet[0].Zbor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bilet[0].Pasager)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Bilet) {
+        <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Clasa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pret)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Zbor.ID)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pasager.Nume) @Html.DisplayFor(modelItem => item.Pasager.Prenume)
+                </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
